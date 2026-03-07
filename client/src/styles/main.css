@@ -1,0 +1,14 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing:border-box;
+
+}
+
+body{
+    background-color: #ebf5f0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
