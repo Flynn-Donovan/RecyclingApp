@@ -1,11 +1,19 @@
-
+import './styles/shared.css'
+import './styles/main.css'
 function App() {
  
 
   return (
     <>
-      <h1> This is my test</h1>
-      <p>Hello World!</p>
+      <body>
+
+      <div className="container">
+        <div className='section'>
+          
+        </div>
+      </div>
+
+      </body>
     </>
   )
 }
