@@ -1,4 +1,7 @@
-const RefundRule = require('./refundRule.js');
+const refundRules = [
+  { tag: 'bottle', region: 'Alberta', moreThanLiter: false, refund: 0.10 },
+  { tag: 'bottle', region: 'Alberta', moreThanLiter: true, refund: 0.25 },
+];
 
 exports.postEstimate = async (req, res) => {
   try {
@@ -20,11 +23,12 @@ exports.postEstimate = async (req, res) => {
       return res.status(400).json({ message: 'bottleCount must be a positive integer' });
     }
 
-    const rule = await RefundRule.findOne({
-      tag,
-      region,
-      moreThanLiter
-    });
+    const rule = refundRules.find(
+      (item) =>
+        item.tag.toLowerCase() === tag.toLowerCase() &&
+        item.region.toLowerCase() === region.toLowerCase() &&
+        item.moreThanLiter === moreThanLiter
+    );
 
     if (!rule) {
       return res.status(404).json({ message: 'No matching refund rule found' });
@@ -38,13 +42,13 @@ exports.postEstimate = async (req, res) => {
       moreThanLiter,
       bottleCount,
       refundPerBottle: rule.refund,
-      refundAmount: totalRefund
+      refundAmount: totalRefund,
     });
   } catch (err) {
     console.error('Refund estimate error:', err);
     return res.status(500).json({
       success: false,
-      errorMessage: err.message
+      errorMessage: err.message,
     });
   }
 };
