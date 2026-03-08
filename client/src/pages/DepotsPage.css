@@ -1,0 +1,49 @@
+.depots-page__back {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.depots-page__heading {
+  font-size: 32px;
+  color: white;
+  margin: 0 0 8px;
+}
+
+.depots-page__subheading {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.depots-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.depot-card {
+  background: #f7f7f4;
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.depot-card__name {
+  margin: 0 0 8px;
+  color: #1e2a22;
+}
+
+.depot-card__text {
+  margin: 0 0 6px;
+  color: #52635a;
+}
+
+.depot-card__note {
+  margin-top: 10px;
+  color: #2e9660;
+  font-weight: 600;
+}

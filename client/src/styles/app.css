@@ -1,0 +1,22 @@
+.page {
+  min-height: 100vh;
+  background: #edf1ee;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  min-height: 90vh;
+  background: #2e9660;
+  border-radius: 0 0 28px 28px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.app-content {
+  padding: 24px 20px 28px;
+}

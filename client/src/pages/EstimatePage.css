@@ -1,0 +1,111 @@
+.estimate-page__back {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.estimate-page__heading {
+  font-size: 32px;
+  color: white;
+  margin: 0 0 8px;
+}
+
+.estimate-page__subheading {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.estimate-page__toggle-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.toggle {
+  flex: 1;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.toggle--active {
+  border: none;
+  background: #ffffff;
+  color: #2e9660;
+  font-weight: 700;
+}
+
+.estimate-card {
+  background: #f7f7f4;
+  border-radius: 22px;
+  padding: 20px;
+}
+
+.estimate-card__label {
+  display: block;
+  margin-bottom: 8px;
+  color: #304237;
+  font-weight: 600;
+}
+
+.estimate-card__input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #d5ddd8;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.estimate-card__helper {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #66756d;
+}
+
+.estimate-card__button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  background: #2e9660;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.estimate-card__result-box {
+  margin-top: 18px;
+  background: #eaf6ee;
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+}
+
+.estimate-card__result-label {
+  color: #567060;
+  font-size: 14px;
+}
+
+.estimate-card__result-value {
+  font-size: 34px;
+  font-weight: 800;
+  color: #1f2d24;
+  margin: 8px 0;
+}
+
+.estimate-card__result-note {
+  font-size: 13px;
+  color: #6f7f76;
+}
