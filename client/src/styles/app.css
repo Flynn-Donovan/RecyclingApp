@@ -1,39 +1,91 @@
+/* ============================================
+   App shell — fluid, responsive layout
+   ============================================ */
+
 .page {
   min-height: 100vh;
-  background: #edf1ee;
+  background: var(--color-bg-page);
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 20px 16px 32px;
+  padding: 16px;
 }
 
 .app-shell {
   width: 100%;
-  max-width: 540px;
+  max-width: 1200px;
   margin: 0 auto;
-  min-height: 85vh;
-  background: #2e9660;
-  border-radius: 0 0 28px 28px;
+  min-height: 90vh;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-2xl);
   overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-xl);
+  transition: box-shadow var(--transition-normal);
+}
+
+.app-shell:hover {
+  box-shadow: 0 20px 50px rgba(15, 118, 110, 0.2);
 }
 
 .app-content {
-  padding: 24px 20px 28px;
+  padding: 0;
+  min-height: 60vh;
+}
+
+.app-content--page {
+  background: var(--color-bg-page);
+  padding: 0 24px 48px;
+}
+
+.inner-page__top {
+  background: var(--color-bg-hero);
+  padding: 24px 24px 28px;
+  margin: 0 -24px 24px -24px;
+  color: var(--color-text-on-primary);
+}
+
+.inner-page__top .page-subheading {
+  margin-bottom: 0;
+}
+
+.inner-page__body {
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 @media (min-width: 640px) {
+  .app-content--page {
+    padding: 0 32px 56px;
+  }
+
+  .inner-page__top {
+    margin: 0 -32px 28px -32px;
+    padding: 28px 32px 32px;
+  }
+
+  .inner-page__body {
+    max-width: 680px;
+  }
+}
+
+/* Desktop: use horizontal space, avoid narrow column */
+@media (min-width: 640px) {
   .page {
-    padding: 32px 24px 48px;
+    padding: 24px 32px 48px;
   }
 
   .app-shell {
-    max-width: 620px;
     min-height: 88vh;
-    border-radius: 0 0 32px 32px;
+    border-radius: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    padding: 32px 48px 64px;
   }
 
   .app-content {
-    padding: 28px 24px 36px;
+    padding: 0;
   }
 }

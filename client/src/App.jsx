@@ -4,6 +4,7 @@ import "./styles/app.css";
 import Header from "./components/shared/Header";
 import Hero from "./components/home/Hero";
 import ActionButtons from "./components/home/ActionButtons";
+import Features from "./components/home/Features";
 import StatsBar from "./components/home/StatsBar";
 
 import EstimatePage from "./pages/EstimatePage";
@@ -34,6 +35,7 @@ export default function App() {
               onDepots={() => setPage("depots")}
               onPickup={() => setPage("pickup")}
             />
+            <Features />
             <StatsBar />
           </>
         );
@@ -44,7 +46,9 @@ export default function App() {
     <div className="page">
       <div className="app-shell">
         <Header />
-        <div className="app-content">{renderPage()}</div>
+        <div className={`app-content ${page !== "home" ? "app-content--page" : ""}`}>
+          {renderPage()}
+        </div>
       </div>
     </div>
   );

@@ -1,28 +1,164 @@
-.action-buttons {
+.ctas {
+  padding: 0 24px 32px;
+}
+
+.ctas__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.cta {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-top: 28px;
-}
-
-.action-buttons__primary {
-  background: #ffffff;
-  color: #2e9660;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 16px;
   border: none;
-  border-radius: 18px;
-  padding: 18px;
-  font-size: 18px;
-  font-weight: 700;
+  border-radius: var(--radius-xl);
+  font-weight: 600;
+  font-size: 0.95rem;
   cursor: pointer;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), background-color var(--transition-smooth);
+  min-height: 88px;
 }
 
-.action-buttons__secondary {
-  background: rgba(255, 255, 255, 0.18);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 18px;
-  padding: 18px;
-  font-size: 18px;
+.cta__icon {
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.cta__icon--primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.cta__icon--secondary {
+  font-size: 1.75rem;
+  display: block;
+  filter: none;
+}
+
+.cta__label {
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Quick Estimate — strongest CTA: solid background, max contrast, prominent hover */
+.cta--primary {
+  grid-column: 1 / -1;
+  background: #ffffff;
+  color: var(--color-primary);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(15, 118, 110, 0.2);
+  min-height: 96px;
+  padding: 24px 20px;
+  font-size: 1.05rem;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+.cta--primary .cta__icon--primary {
+  color: var(--color-primary);
+}
+
+.cta--primary .cta__label {
   font-weight: 700;
-  cursor: pointer;
+  color: var(--color-primary);
+}
+
+.cta--primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(15, 118, 110, 0.25);
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.cta--primary:hover .cta__icon--primary,
+.cta--primary:hover .cta__label {
+  color: var(--color-primary);
+}
+
+.cta--primary:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Action cards — white, soft shadow, rounded, hover elevation, icon emphasis */
+.cta--secondary {
+  background: #ffffff;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  border-radius: 20px;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-fast);
+}
+
+.cta--secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(20, 184, 166, 0.3);
+}
+
+.cta--secondary:active {
+  transform: translateY(0);
+}
+
+/* Subtle colored tint behind secondary icons for vibrancy */
+.cta--secondary .cta__icon--secondary {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--color-teal-muted);
+  font-size: 1.4rem;
+}
+
+@media (min-width: 640px) {
+  .ctas {
+    padding: 0 32px 40px;
+  }
+
+  .ctas__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    max-width: 900px;
+  }
+
+  .cta--primary {
+    grid-column: 1 / -1;
+    min-height: 80px;
+    flex-direction: row;
+    gap: 16px;
+    padding: 22px 28px;
+    font-size: 1.1rem;
+    border-radius: 24px;
+  }
+
+  .cta--primary .cta__icon--primary {
+    width: 36px;
+    height: 36px;
+  }
+
+  .cta--primary .cta__icon--primary svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .cta--secondary {
+    min-height: 108px;
+    border-radius: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ctas__grid {
+    max-width: 1000px;
+  }
 }

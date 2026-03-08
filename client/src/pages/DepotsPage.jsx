@@ -29,16 +29,18 @@ export default function DepotsPage({ onBack }) {
   }, []);
 
   return (
-    <div className="depots-page">
-      <button className="depots-page__back" onClick={onBack}>
-        ← Back
-      </button>
+    <div className="depots-page inner-page">
+      <div className="inner-page__top">
+        <button type="button" className="btn-back" onClick={onBack}>
+          ← Back
+        </button>
+        <h2 className="page-heading">Nearby Depots</h2>
+        <p className="page-subheading">
+          Bottle depots in Edmonton. Open in Google Maps for directions.
+        </p>
+      </div>
 
-      <h2 className="depots-page__heading">Nearby Depots</h2>
-      <p className="depots-page__subheading">
-        Bottle depots in Edmonton. Open in Google Maps for directions.
-      </p>
-
+      <div className="inner-page__body">
       {error && <p className="depots-page__error">{error}</p>}
       {loading && <p className="depots-page__loading">Loading depots…</p>}
 
@@ -59,6 +61,7 @@ export default function DepotsPage({ onBack }) {
             </a>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

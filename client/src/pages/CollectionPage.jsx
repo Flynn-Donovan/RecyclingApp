@@ -83,16 +83,18 @@ export default function CollectionPage({ onBack }) {
   };
 
   return (
-    <div className="collection-page">
-      <button className="collection-page__back" onClick={onBack}>
-        ← Back
-      </button>
+    <div className="collection-page inner-page">
+      <div className="inner-page__top">
+        <button type="button" className="btn-back" onClick={onBack}>
+          ← Back
+        </button>
+        <h2 className="page-heading">My Collection</h2>
+        <p className="page-subheading">
+          Add bottle entries (volume + quantity) or bag entries (weight). Total refund is calculated automatically.
+        </p>
+      </div>
 
-      <h2 className="collection-page__heading">My Collection</h2>
-      <p className="collection-page__subheading">
-        Add bottle entries (volume + quantity) or bag entries (weight). Total refund is calculated automatically.
-      </p>
-
+      <div className="inner-page__body">
       <div className="collection-page__toggle">
         <button
           className={mode === "bottle" ? "toggle toggle--active" : "toggle"}
@@ -189,6 +191,7 @@ export default function CollectionPage({ onBack }) {
           ))}
         </ul>
       )}
+      </div>
     </div>
   );
 }

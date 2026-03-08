@@ -17,16 +17,18 @@ export default function EstimatePage({ onBack }) {
   };
 
   return (
-    <div className="estimate-page">
-      <button className="estimate-page__back" onClick={onBack}>
-        ← Back
-      </button>
+    <div className="estimate-page inner-page">
+      <div className="inner-page__top">
+        <button type="button" className="btn-back" onClick={onBack}>
+          ← Back
+        </button>
+        <h2 className="page-heading">Estimate Your Refund</h2>
+        <p className="page-subheading">
+          Enter bottle volume or total bag weight to estimate your refund.
+        </p>
+      </div>
 
-      <h2 className="estimate-page__heading">Estimate Your Refund</h2>
-      <p className="estimate-page__subheading">
-        Enter bottle volume or total bag weight to estimate your refund.
-      </p>
-
+      <div className="inner-page__body">
       <div className="estimate-page__toggle-row">
         <button
           className={mode === "volume" ? "toggle toggle--active" : "toggle"}
@@ -95,6 +97,7 @@ export default function EstimatePage({ onBack }) {
             </div>
           </div>
         )}
+      </div>
       </div>
     </div>
   );

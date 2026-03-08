@@ -1,10 +1,13 @@
 import "./Header.css";
+import Logo from "./Logo";
 
 export default function Header() {
   return (
-    <div className="header">
-      <div className="header__brand">RecyclingApp</div>
-      <div className="header__region">Edmonton, AB</div>
-    </div>
+    <header className="header">
+      <div className="header__inner">
+        <Logo size={36} showText={true} variant="dark" />
+        <span className="header__region">Edmonton, AB</span>
+      </div>
+    </header>
   );
 }

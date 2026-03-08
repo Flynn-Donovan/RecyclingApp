@@ -57,16 +57,18 @@ export default function PickupPage({ onBack }) {
   };
 
   return (
-    <div className="pickup-page">
-      <button className="pickup-page__back" onClick={onBack}>
-        ← Back
-      </button>
-
-      <h2 className="pickup-page__heading">Request Pickup Service</h2>
-      <p className="pickup-page__subheading">
+    <div className="pickup-page inner-page">
+      <div className="inner-page__top">
+        <button type="button" className="btn-back" onClick={onBack}>
+          ← Back
+        </button>
+        <h2 className="page-heading">Request Pickup Service</h2>
+        <p className="page-subheading">
         Submit your details and we’ll pass your request to a pickup service in Edmonton.
-      </p>
+        </p>
+      </div>
 
+      <div className="inner-page__body">
       <form className="pickup-form" onSubmit={handleSubmit}>
         <h3 className="pickup-form__title">Pickup Request</h3>
 
@@ -120,6 +122,7 @@ export default function PickupPage({ onBack }) {
           {loading ? "Submitting…" : "Submit Request"}
         </button>
       </form>
+      </div>
     </div>
   );
 }

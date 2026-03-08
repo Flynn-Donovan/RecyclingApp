@@ -1,75 +1,74 @@
-.depots-page__back {
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 16px;
+.depots-page__error {
+  color: var(--color-error);
   margin-bottom: 16px;
-  cursor: pointer;
-  padding: 0;
+  font-size: 0.9rem;
 }
 
-.depots-page__heading {
-  font-size: 32px;
-  color: white;
-  margin: 0 0 8px;
-}
-
-.depots-page__subheading {
-  color: rgba(255, 255, 255, 0.9);
+.depots-page__loading {
+  color: var(--color-text-muted);
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 0.95rem;
 }
 
 .depots-page__list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .depot-card {
-  background: #f7f7f4;
+  background: #ffffff;
   border-radius: 20px;
-  padding: 18px;
+  padding: 22px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.depot-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
 .depot-card__name {
-  margin: 0 0 8px;
-  color: #1e2a22;
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
 }
 
 .depot-card__text {
   margin: 0 0 6px;
-  color: #52635a;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
 }
 
 .depot-card__note {
-  margin-top: 10px;
-  color: #2e9660;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: var(--color-teal);
   font-weight: 600;
 }
 
 .depot-card__directions {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 16px;
-  background: #2e9660;
-  color: white;
-  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px 20px;
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  border-radius: var(--radius-pill);
   text-decoration: none;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.9rem;
+  transition: transform var(--transition-smooth), background var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
 .depot-card__directions:hover {
-  opacity: 0.9;
-}
-
-.depots-page__error,
-.depots-page__loading {
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 12px;
-}
-
-.depots-page__error {
-  color: #f5d0d0;
+  background: var(--color-primary-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-text-on-primary);
 }
