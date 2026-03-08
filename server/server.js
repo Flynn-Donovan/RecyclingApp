@@ -3,8 +3,12 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const refundRoutes = require('./refundRoutes');
+const goalRoutes = require('./goalRoutes');
+const connectDB = require('./config/db');
 
 const app = express();
+
+connectDB();
 
 app.use(cors());
 app.use(express.json());
@@ -14,6 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api', refundRoutes);
+app.use('/api', goalRoutes);
 
 const PORT = process.env.PORT || 5000;
 
