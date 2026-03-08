@@ -12,40 +12,32 @@ exports.postEstimate = async (req, res) => {
     if (!bottleCount || bottleCount <= 0) return res.status(400).json({ message: "Invalid count" });
     
     // 2. Query Database (The calculateRefund part)
-    const rule = {tag: "bottle", region: "Alberta", moreThanLiter: false, bottleCount: 123 }
-
-    if (!moreThanLiter) {refundPerBottle = 0.1;}
-    else if (region == "Alberta") {
-      refundPerBottle = 0.25;
-    }
-
+    // Pretend the database found this rule: "In Alberta, bottles under 1L give 0.10"
+    const rule = { 
+      tag: "bottle", 
+      region: "Alberta", 
+      moreThanLiter: false, 
+      refund: 0.10 // The database should tell us the price!
+    };
 
     if (!rule) return res.status(404).json({ message: "No rule found" });
-    if (moreThanLiter == true) {
 
-    }
+    // 3. Calculate using the RULE from the database and the COUNT from the user
+    const totalRefund = rule.refund * bottleCount;
 
-    // 3. Send Response
+    // 4. Send Response
     res.status(200).json({
-      tag,
-      region,
-      moreThanLiter,
-      bottleCount,
-      refundAmount:
+      tag: tag,
+      region: region,
+      moreThanLiter: moreThanLiter,
+      bottleCount: bottleCount, // We return the user's 200 bottles
+      refundAmount: totalRefund // We return the calculated money (0.10 * 200 = 20)
     });
 
   } catch (err) {
-  // This prints to your VS Code terminal (The "Black Box" recorder)
-  console.log("======= BACKEND CRASH SUMMARY =======");
-  console.error(err); 
-  console.log("=====================================");
-
-  // This sends the specific error message back to Thunder Client
-  res.status(500).json({ 
-    success: false,
-    errorName: err.name,
-    errorMessage: err.message,
-    stack: err.stack // This tells you exactly which LINE number failed
-  });
-}
+    console.log("======= BACKEND CRASH SUMMARY =======");
+    console.error(err); 
+    console.log("=====================================");
+    res.status(500).json({ success: false, errorMessage: err.message });
+  }
 };
